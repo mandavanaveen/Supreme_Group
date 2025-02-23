@@ -73,27 +73,6 @@ const VehicleSelector: React.FC = () => {
     }
   }, [isInView]);
 
-  // Horizontal scroll behavior
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (!sectionRef.current) return;
-
-  //     const scrollTop = sectionRef.current.scrollTop;
-  //     if (scrollTop > 50) { // Adjust threshold as needed
-  //       setHasScrolled(true);  // User has started scrolling
-  //       setScrolled(true);
-  //     } else {
-  //       setScrolled(false);
-  //     }
-  //   };
-
-  //   const container = sectionRef.current;
-  //   container?.addEventListener("scroll", handleScroll);
-
-  //   return () => container?.removeEventListener("scroll", handleScroll);
-  // }, []);
-
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
@@ -240,7 +219,7 @@ const VehicleSelector: React.FC = () => {
             animate={scrollStep === 1 ? { y: 200, opacity: 0 } : { y: 0, opacity: 1 }}
             transition={{ duration: 2,  }}
             >
-            <div className="flex justify-center w-full md:w-2/3 h-[340px] rounded-lg ml-20">
+            <div className="flex justify-center w-full md:w-2/3 h-[340px] rounded-lg ml-[170px]">
                 <video ref={videoRef} src={selectedVideo} className="w-[780px] h-[340px]"
                   property="auto" muted playsInline
                   // autoPlay
