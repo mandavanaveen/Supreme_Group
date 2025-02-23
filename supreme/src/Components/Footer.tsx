@@ -5,7 +5,7 @@ import Foote from "../assets/Footer.svg";
 const Footer: React.FC = () => {
   return (
     <div className="relative px-6 md:px-24 bg-gradient-to-t from-blue-200 via-white to-white text-black flex flex-col items-start gap-10 md:gap-20">
-      <img src={Foote} alt='footer-background' className='absolute right-0 bottom-0 -z-0 w-full max-w-[400px] md:max-w-none' />
+      <img src={Foote} alt='footer-background' className='absolute right-0 bottom-0 -z-0' />
       
       <img src={Logo} alt='logo-footer' className='mt-10 md:mt-20 w-[180px] md:w-[226px] h-auto' />
       
