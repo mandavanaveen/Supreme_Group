@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+body {
+    font-family: 'Manrope', sans-serif;
+  }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust width */
+}
+
+::-webkit-scrollbar-track {
+  background: white; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: black; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Optional: Makes it rounded */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333; /* Slightly lighter black when hovered */
+}
