@@ -55,11 +55,11 @@ const VehicleSelector: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const videosToShow = active === 0 ? Videos.Car_Videos : Videos.Comm_Videos;
   const sectionRef = useRef<HTMLDivElement>(null);
-  // const [scrolled, setScrolled] = useState(false);
   const { scrollYProgress } = useScroll({ container: sectionRef });
   const isInView = useInView(sectionRef, { once: false, margin: "-50px" });
-  // const [hasScrolled, setHasScrolled] = useState(false);
   const [scrollStep, setScrollStep] = useState(0);
+  const [scrollCount, setScrollCount] = useState(0);
+
 
   useEffect(() => {
     if (videoRef.current) {
@@ -76,16 +76,21 @@ const VehicleSelector: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = (event: WheelEvent) => {
+      if (scrollCount > 1) {
+        setScrollCount((prev) => prev + 1);
+        return;
+      }
+
       if (event.deltaY > 0) {
-        setScrollStep((prev) => Math.min(prev + 1, 2)); // Scroll forward
+        setScrollStep((prev) => Math.min(prev + 1, 3)); // Scroll forward
       } else {
-        setScrollStep((prev) => Math.max(prev - 1, 0)); // Scroll backward
+        setScrollStep((prev) => Math.max(prev - 1, 2)); // Scroll backward
       }
     };
 
     window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
-  }, []);
+  }, [scrollCount]);
 
   const handleWheel = useCallback((event: WheelEvent) => {
     if (!sectionRef.current) return;
@@ -151,12 +156,11 @@ const VehicleSelector: React.FC = () => {
 
   return (
     <section 
-      // ref={sectionRef} 
       className="flex flex-col w-full h-screen gap-20 bg-black px-4 md:px-10 overflow-hidden relative text-white" id="vehicles">
       <motion.div
         className="flex items-center justify-center w-full relative"
-        initial={{ y: 700, opacity: 1 }}
-        animate={scrollStep === 1  ? { y: 700, opacity: 1 } : { y: 150, opacity: 1 }}
+        initial={{ y: 450, opacity: 1 }}
+        animate={scrollStep === 2  ? { y: 450, opacity: 1 } : { y: 150, opacity: 1 }}
         transition={{ duration: 0.8,  }}
       >
         <div 
@@ -175,7 +179,7 @@ const VehicleSelector: React.FC = () => {
         className="flex relative"
         style={{ opacity: scrollYProgress }}
         initial={{ y: 1000, opacity: 0 }}
-        animate={scrollStep === 1  ? { y: 1000, opacity: 0 } : { y: 100, opacity: 1 }}
+        animate={scrollStep === 2  ? { y: 1000, opacity: 1 } : { y: 100, opacity: 1 }}
         transition={{ duration: 2,  }}
       >
         <div className="flex flex-col justify-center md:gap-14 w-fit md:flex-row md:justify-between transition-all duration-700 ease-in-out relative"
@@ -215,8 +219,8 @@ const VehicleSelector: React.FC = () => {
           <motion.div
             className="flex relative "
             style={{ opacity: scrollYProgress }}
-            initial={{ y: 200, opacity: 1 }}
-            animate={scrollStep === 1 ? { y: 200, opacity: 0 } : { y: 0, opacity: 1 }}
+            initial={{ y: 600, opacity: 0 }}
+            animate={scrollStep === 2 ? { y: 600, opacity: 1 } : { y: 0, opacity: 1 }}
             transition={{ duration: 2,  }}
             >
             <div className="fixed flex justify-center w-fit md:w-2/3 md:h-[340px] rounded-lg">
@@ -233,8 +237,8 @@ const VehicleSelector: React.FC = () => {
       <motion.div
           className="flex justify-center -mt-20"
           style={{ opacity: scrollYProgress }}
-          initial={{ x: -60, y: 1200, opacity: 1 }}
-          animate={scrollStep === 1 ? { y: 1200, opacity: 1 } : { y: 300, opacity: 1 }}
+          initial={{ x: -60, y: 1200, opacity: 0 }}
+          animate={scrollStep === 2 ? { y: 1200, opacity: 1 } : { y: 300, opacity: 1 }}
           transition={{ duration: 2 }}
         >
           {videosToShow.length > 0 && (

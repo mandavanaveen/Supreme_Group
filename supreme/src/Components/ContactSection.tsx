@@ -48,7 +48,7 @@ const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     if (validateForm()) {
-      alert('Form submitted successfully!'); // Replace with API call
+      alert('Form submitted successfully!');
       setFormData({ name: '', email: '', company: '', message: '' });
     }
     setIsSubmitting(false);
