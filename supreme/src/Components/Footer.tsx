@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           <li><a href="/terms-conditions" className="text-gray-600 hover:text-black text-sm md:text-xl">Terms and Conditions</a></li>
         </ul>
         
-        <ul className="flex flex-col gap-3 text-black bg-amber-300">
+        <ul className="flex flex-col gap-3 text-black">
           <li className="text-lg md:text-2xl font-bold uppercase">Follow Us</li>
           <li><a href="https://twitter.com" className="text-gray-600 hover:text-black text-sm md:text-xl">Twitter</a></li>
           <li><a href="https://linkedin.com" className="text-gray-600 hover:text-black text-sm md:text-xl">LinkedIn</a></li>
