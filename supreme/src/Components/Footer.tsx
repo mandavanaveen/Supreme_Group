@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       
       <img src={Logo} alt='logo-footer' className='mt-10 md:mt-20 w-[180px] md:w-[226px] h-auto' />
       
-      <div className='w-full flex flex-wrap justify-between gap-8'>
+      <div className='w-full flex flex-wrap md:justify-between gap-20'>
         <ul className="flex flex-col gap-3 text-black">
           <li className="text-lg md:text-2xl font-bold uppercase">Applications</li>
           <li><a href="/applications/apparel" className="text-gray-600 hover:text-black text-sm md:text-xl">Apparel</a></li>
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           <li><a href="/terms-conditions" className="text-gray-600 hover:text-black text-sm md:text-xl">Terms and Conditions</a></li>
         </ul>
         
-        <ul className="flex flex-col gap-3 text-black">
+        <ul className="flex flex-col gap-3 text-black bg-amber-300">
           <li className="text-lg md:text-2xl font-bold uppercase">Follow Us</li>
           <li><a href="https://twitter.com" className="text-gray-600 hover:text-black text-sm md:text-xl">Twitter</a></li>
           <li><a href="https://linkedin.com" className="text-gray-600 hover:text-black text-sm md:text-xl">LinkedIn</a></li>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       
-      <footer className='pb-6 md:pb-10 w-full flex flex-wrap justify-between text-sm md:text-xl'>
+      <footer className='pb-6 md:pb-10 w-full flex flex-col md:flex-wrap justify-between text-center text-[13px] md:text-xl'>
         <p>©2024. All Rights Reserved.</p>
         <p className='text-center md:text-left'>Supreme House, 110, 16th Road, Chembur, Mumbai - 400071.</p>
       </footer>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Firstpage: React.FC = () => {
   return (
-    <div className="relative h-[925px] text-white bg-[#00000099] bg-opacity-60 flex justify-center items-center px-4 md:px-0">
+    <div className="relative w-full h-[925px] text-white bg-[#00000099] bg-opacity-60 flex justify-center items-center px-4 md:px-0">
       <div className="w-full max-w-[761px] h-auto flex flex-col text-center">
         <p className="text-lg md:text-[22px] font-normal">Performance in motion</p>
         <h2 className="flex flex-col justify-center">

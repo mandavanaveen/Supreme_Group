@@ -152,17 +152,17 @@ const VehicleSelector: React.FC = () => {
   return (
     <section 
       // ref={sectionRef} 
-      className="flex flex-col h-screen gap-20 bg-black px-4 md:px-10 overflow-hidden relative text-white" id="vehicles">
+      className="flex flex-col w-full h-screen gap-20 bg-black px-4 md:px-10 overflow-hidden relative text-white" id="vehicles">
       <motion.div
-        className="flex items-center h-screen justify-center w-full absolute"
-        initial={{ y: 100, opacity: 1 }}
-        animate={scrollStep === 1  ? { y: 0, opacity: 1 } : { y: -250, opacity: 1 }}
+        className="flex items-center justify-center w-full relative"
+        initial={{ y: 700, opacity: 1 }}
+        animate={scrollStep === 1  ? { y: 700, opacity: 1 } : { y: 150, opacity: 1 }}
         transition={{ duration: 0.8,  }}
       >
         <div 
-          className={`flex items-center h-100vh justify-center w-full transition-all duration-700 ease-in-out  font-bold text-white absolute`}
+          className={`md:flex md:items-center flex items-start justify-center md:w-full w-fit transition-all duration-700 ease-in-out font-bold text-white absolute`}
           >
-            <div className="w-[778px] h-[132px] flex flex-col font-light text-2xl md:text-4xl text-center">
+            <div className="md:w-[778px] md:h-[132px] w-full h-[100px] flex flex-col font-light text-[15px] md:text-4xl text-center">
               <span>Evolving the drive with
                 <span className="font-semibold"> 360-degree</span></span> 
               <span className="mt-1">nonwoven solutions</span>
@@ -172,21 +172,21 @@ const VehicleSelector: React.FC = () => {
       
       {/* Sidebar Menu  and video player*/}
       <motion.div
-        className="flex justify-between relative"
+        className="flex justify-center relative"
         style={{ opacity: scrollYProgress }}
         initial={{ y: 1000, opacity: 0 }}
-        animate={scrollStep === 1  ? { y: 1000, opacity: 0 } : { y: 200, opacity: 1 }}
+        animate={scrollStep === 1  ? { y: 1000, opacity: 0 } : { y: 100, opacity: 1 }}
         transition={{ duration: 2,  }}
       >
-        <div className="flex flex-col md:flex-row justify-between transition-all duration-700 ease-in-out relative"
+        <div className="flex flex-col justify-center md:flex-row md:justify-between transition-all duration-700 ease-in-out relative"
           >
-          <div className="flex flex-col pl-14 w-[340px] h-[340px] ml-[108px] relative 2xl:ml-[25%] md:py-[52px] py-5 bg-black text-white">
+          <div className="flex flex-col  md:pl-14 pl-4 w-[340px] md:h-[300px] ml-6 md:ml-[108px] relative 2xl:ml-[25%] md:py-[52px] py-5 bg-black text-white">
             <button
               type="button"
               onClick={() => setActive(0)}
-              className={`transition-all  ${active === 0 ? "opacity-100 " : "opacity-20"}`}
+              className={`transition-all z-10 ${active === 0 ? "opacity-100 " : "opacity-20"}`}
             >
-              <h3 className="sg-translate font-bold text-left text-[22px] pb-2">Passenger vehicles</h3>
+              <h3 className="sg-translate font-bold text-left text-[15px] md:text-[22px] pb-2">Passenger vehicles</h3>
               <h6 className="sg-translate font-normal text-left text-[12px]">
                 Revving up nonwoven innovation from <br /> interior to exterior.
               </h6>
@@ -195,15 +195,15 @@ const VehicleSelector: React.FC = () => {
             <button
               type="button"
               onClick={() => setActive(1)}
-              className={`card-details-2 mt-14 w-full transition-all ${active === 1 ? "opacity-100 " : "opacity-20 "}`}
+              className={`card-details-2 mt-14 w-full z-10 transition-all ${active === 1 ? "opacity-100 " : "opacity-20 "}`}
             >
-              <h3 className="sg-translate font-bold text-left text-[22px] pb-2">Commercial vehicles</h3>
+              <h3 className="sg-translate font-bold text-left text-[15px] md:text-[22px] pb-2">Commercial vehicles</h3>
               <h6 className="sg-translate font-normal text-left text-[12px]">
                 Advancing nonwoven engineering for <br /> heavy-duty vehicles.
               </h6>
             </button>
 
-            <div className="slider-parent absolute left-0 h-full w-[2px] rounded-md bg-gray top-0">
+            <div className="slider-parent absolute left-0 md:w-full h-full w-[2px] rounded-md bg-gray top-0">
               <div
                 className="slider-height h-[50%] w-[2px] bg-white rounded-md transition-transform"
                 style={{ transform: active === 1 ? "translateY(100%)" : "translateY(0%)" }}
@@ -213,14 +213,14 @@ const VehicleSelector: React.FC = () => {
 
           {/* Video Player */}
           <motion.div
-            className="flex justify-between relative"
+            className="flex relative"
             style={{ opacity: scrollYProgress }}
             initial={{ y: 200, opacity: 1 }}
             animate={scrollStep === 1 ? { y: 200, opacity: 0 } : { y: 0, opacity: 1 }}
             transition={{ duration: 2,  }}
             >
-            <div className="flex justify-center w-full md:w-2/3 h-[340px] rounded-lg ml-[170px]">
-                <video ref={videoRef} src={selectedVideo} className="w-[780px] h-[340px]"
+            <div className="flex justify-center w-fit md:w-2/3 md:h-[340px] rounded-lg md:ml-[170px]">
+                <video ref={videoRef} src={selectedVideo} className="w-fit md:w-[780px] md:h-[340px]"
                   property="auto" muted playsInline
                   // autoPlay
                 />
@@ -231,15 +231,15 @@ const VehicleSelector: React.FC = () => {
 
       {/* Video List & Play,Pause Button */}
       <motion.div
-          className="flex justify-center mt-10"
+          className="flex justify-center -mt-20 md:mt-10"
           style={{ opacity: scrollYProgress }}
           initial={{ x: -60, y: 1200, opacity: 1 }}
           animate={scrollStep === 1 ? { y: 1200, opacity: 1 } : { y: 150, opacity: 1 }}
           transition={{ duration: 2 }}
         >
           {videosToShow.length > 0 && (
-            <div className="flex w-[720px] h-[81px] md:ml-[700px] items-center gap-10" >
-              <div className="w-[523px] flex items-center justify-center gap-9">
+            <div className="flex md:w-[720px] w-full h-[81px] ml-[80px] md:ml-[700px] items-center gap- md:gap-10" >
+              <div className="md:w-[523px]  w-[300px] flex items-center justify-center gap-3 md:gap-9">
                 {videosToShow.map((video, index) => (
                   <div
                     key={index}
@@ -248,7 +248,7 @@ const VehicleSelector: React.FC = () => {
                       selectedVideo === video.src ? 'opacity-100' : 'opacity-50'
                     } hover:opacity-100 cursor-pointer flex-shrink-0`}
                   >
-                    <img src={video.image} alt={video.title} className="w-14 h-14 object-contain" />
+                    <img src={video.image} alt={video.title} className="md:w-14 md:h-14 w-10 h-10 object-contain" />
                     <span className="text-xs mt-1 ">{video.title}</span>
                   </div>
                 ))}
