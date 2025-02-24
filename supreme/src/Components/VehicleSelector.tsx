@@ -238,7 +238,7 @@ const VehicleSelector: React.FC = () => {
           transition={{ duration: 2 }}
         >
           {videosToShow.length > 0 && (
-            <div className="fixed flex md:w-[720px] w-full h-[81px] ml-[100px] md:ml-[700px] items-center md:gap-10" >
+            <div className="fixed flex md:w-[720px] w-full h-[81px] ml-[120px] md:ml-[700px] items-center md:gap-10" >
               <div className="md:w-[523px]  w-[300px] flex items-center justify-center gap-3 md:gap-9">
                 {videosToShow.map((video, index) => (
                   <div
