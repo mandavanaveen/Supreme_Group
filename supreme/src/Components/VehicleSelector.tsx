@@ -178,7 +178,7 @@ const VehicleSelector: React.FC = () => {
         animate={scrollStep === 1  ? { y: 1000, opacity: 0 } : { y: 100, opacity: 1 }}
         transition={{ duration: 2,  }}
       >
-        <div className="flex flex-col justify-center gap-10 md:gap-14 w-fit md:flex-row md:justify-between transition-all duration-700 ease-in-out relative"
+        <div className="flex flex-col justify-center md:gap-14 w-fit md:flex-row md:justify-between transition-all duration-700 ease-in-out relative"
           >
           <div className="flex flex-col md:pl-14 pl-4 w-[340px] md:h-[300px] ml-18 md:ml-[108px] relative md:py-[52px] py-5 bg-black text-white">
             <button
