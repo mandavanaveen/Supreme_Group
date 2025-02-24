@@ -231,14 +231,14 @@ const VehicleSelector: React.FC = () => {
 
       {/* Video List & Play,Pause Button */}
       <motion.div
-          className="flex justify-center  md:-mt-30"
+          className="flex justify-center -mt-20"
           style={{ opacity: scrollYProgress }}
           initial={{ x: -60, y: 1200, opacity: 1 }}
           animate={scrollStep === 1 ? { y: 1200, opacity: 1 } : { y: 300, opacity: 1 }}
           transition={{ duration: 2 }}
         >
           {videosToShow.length > 0 && (
-            <div className="fixed flex md:w-[720px] w-full h-[81px] ml-[100px] md:ml-[700px] items-center gap- md:gap-10" >
+            <div className="fixed flex md:w-[720px] w-full h-[81px] ml-[100px] md:ml-[700px] items-center md:gap-10" >
               <div className="md:w-[523px]  w-[300px] flex items-center justify-center gap-3 md:gap-9">
                 {videosToShow.map((video, index) => (
                   <div
