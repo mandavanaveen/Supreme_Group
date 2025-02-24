@@ -172,15 +172,15 @@ const VehicleSelector: React.FC = () => {
       
       {/* Sidebar Menu  and video player*/}
       <motion.div
-        className="flex justify-center relative"
+        className="flex relative"
         style={{ opacity: scrollYProgress }}
         initial={{ y: 1000, opacity: 0 }}
         animate={scrollStep === 1  ? { y: 1000, opacity: 0 } : { y: 100, opacity: 1 }}
         transition={{ duration: 2,  }}
       >
-        <div className="flex flex-col justify-center md:flex-row md:justify-between transition-all duration-700 ease-in-out relative"
+        <div className="flex flex-col justify-center gap-10 md:gap-14 w-fit md:flex-row md:justify-between transition-all duration-700 ease-in-out relative"
           >
-          <div className="flex flex-col  md:pl-14 pl-4 w-[340px] md:h-[300px] ml-6 md:ml-[108px] relative 2xl:ml-[25%] md:py-[52px] py-5 bg-black text-white">
+          <div className="flex flex-col md:pl-14 pl-4 w-[340px] md:h-[300px] ml-18 md:ml-[108px] relative md:py-[52px] py-5 bg-black text-white">
             <button
               type="button"
               onClick={() => setActive(0)}
@@ -213,13 +213,13 @@ const VehicleSelector: React.FC = () => {
 
           {/* Video Player */}
           <motion.div
-            className="flex relative"
+            className="flex relative "
             style={{ opacity: scrollYProgress }}
             initial={{ y: 200, opacity: 1 }}
             animate={scrollStep === 1 ? { y: 200, opacity: 0 } : { y: 0, opacity: 1 }}
             transition={{ duration: 2,  }}
             >
-            <div className="flex justify-center w-fit md:w-2/3 md:h-[340px] rounded-lg md:ml-[170px]">
+            <div className="fixed flex justify-center w-fit md:w-2/3 md:h-[340px] rounded-lg">
                 <video ref={videoRef} src={selectedVideo} className="w-fit md:w-[780px] md:h-[340px]"
                   property="auto" muted playsInline
                   // autoPlay
@@ -231,14 +231,14 @@ const VehicleSelector: React.FC = () => {
 
       {/* Video List & Play,Pause Button */}
       <motion.div
-          className="flex justify-center -mt-20 md:mt-10"
+          className="flex justify-center  md:-mt-30"
           style={{ opacity: scrollYProgress }}
           initial={{ x: -60, y: 1200, opacity: 1 }}
-          animate={scrollStep === 1 ? { y: 1200, opacity: 1 } : { y: 150, opacity: 1 }}
+          animate={scrollStep === 1 ? { y: 1200, opacity: 1 } : { y: 300, opacity: 1 }}
           transition={{ duration: 2 }}
         >
           {videosToShow.length > 0 && (
-            <div className="flex md:w-[720px] w-full h-[81px] ml-[80px] md:ml-[700px] items-center gap- md:gap-10" >
+            <div className="fixed flex md:w-[720px] w-full h-[81px] ml-[100px] md:ml-[700px] items-center gap- md:gap-10" >
               <div className="md:w-[523px]  w-[300px] flex items-center justify-center gap-3 md:gap-9">
                 {videosToShow.map((video, index) => (
                   <div

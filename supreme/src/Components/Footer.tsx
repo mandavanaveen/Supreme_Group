@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       
-      <footer className='pb-6 md:pb-10 w-full flex md:flex-row flex-col md:flex-wrap md:justify-between text-center text-[13px] md:text-xl'>
+      <footer className='pb-6 md:pb-10 w-full flex md:flex-row md flex-2 flex-col md:flex-wrap md:justify-between text-center text-[13px] md:text-xl'>
         <p>©2024. All Rights Reserved.</p>
         <p className='text-center md:text-left'>Supreme House, 110, 16th Road, Chembur, Mumbai - 400071.</p>
       </footer>
